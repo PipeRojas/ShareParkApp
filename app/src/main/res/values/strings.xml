@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SharePark</string>
+    <string name="title_activity_find_parking">FindParking</string>
+</resources>
