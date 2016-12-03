@@ -2,5 +2,18 @@
     <string name="app_name">SharePark</string>
     <string name="title_activity_find_parking">SharePark</string>
     <string name="textview"></string>
-    <string name="find_address">¿Donde Estoy?</string>
+    <string name="find_address">Menú</string>
+    <string name="parking_request">Solicitar Estacionamiento</string>
+    <string name="parking_request_title">Solicitar Estacionamiento</string>
+    <string name="button3_text">Volver</string>
+    <string name="button4_text">Realizar Solicitud</string>
+    <string name="textview6_text">Dirección Estacionamiento: </string>
+    <string name="textview5_text">Nombre del Dueño: </string>
+    <string name="parking_request_title_text">Solicitar Estacionamiento</string>
+    <string name="button6_text">Enviar Solicitud</string>
+    <string name="textview7_text">Estacionamiento Cubierto: </string>
+    <string name="textview8_text">Tipo de Propiedad: </string>
+    <string name="textview9_text">Está Disponible: </string>
+    <string name="textview10_text">Costo por Minuto en Pesos: </string>
+    <string name="textview11_text">Estrato: </string>
 </resources>

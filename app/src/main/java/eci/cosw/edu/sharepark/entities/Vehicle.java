@@ -21,7 +21,7 @@ public class Vehicle implements Serializable{
     private String brand=null;
     private String model=null;
     private String color=null;
-    private HashMap<String,Boolean> vehicleType= new HashMap<String, Boolean>();
+    private String vehicleType;
     private Integer owner_id;
 
 
@@ -34,8 +34,6 @@ public class Vehicle implements Serializable{
     }
 
     public Vehicle() {
-        vehicleType.put("Automovil", Boolean.FALSE);vehicleType.put("Campero", Boolean.FALSE);vehicleType.put("Camioneta o Pickup", Boolean.FALSE);
-        vehicleType.put("Van", Boolean.FALSE);vehicleType.put("Mini van", Boolean.FALSE);
     }
 
 
@@ -74,25 +72,11 @@ public class Vehicle implements Serializable{
     }
 
 
-
     public String getVehicleType() {
-        String ans=null;
-        for (String s:vehicleType.keySet()) {
-            if(vehicleType.get(s)){
-                ans=s;
-                break;
-            }
-        }
-        return ans;
+        return vehicleType;
     }
 
-    public void setVehicleType(String s) {
-        for (String st:vehicleType.keySet()) {
-            if(st.equals(s)){
-                vehicleType.put(st, Boolean.TRUE);
-                break;
-            }
-        }
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
-
 }

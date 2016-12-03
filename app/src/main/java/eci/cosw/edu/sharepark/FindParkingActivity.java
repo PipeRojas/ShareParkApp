@@ -60,16 +60,20 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
     private List<Parking> parkings;
     private Map<Marker, Parking> parkMarkers=new HashMap<>();
     private User owner;
+    private Parking selectedParking;
+    Button request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         description =(TextView)findViewById(R.id.textView2);
+        request=(Button) findViewById(R.id.button3);
+        request.setEnabled(false);
         ExecutorService ex=Executors.newFixedThreadPool(1);
         ex.execute(new Runnable() {
             @Override
-            public void run() {
+            public synchronized void run() {
                 getParkings();
             }
         });
@@ -87,9 +91,17 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
         fAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickButton();
+
             }
         });
+        Button addRequestButton=(Button) findViewById(R.id.button3);
+        addRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registerRequest();
+            }
+        });
+        loadMap();
     }
 
     public synchronized void buildGoogleApiClient() {
@@ -98,6 +110,7 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API).build();
     }
+
 
     /**
      * Manipulates the map once available.
@@ -111,24 +124,26 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
-        this.googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+        this.googleMap.setOnMarkerClickListener(                                                                                              new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 if(parkMarkers.containsKey(marker)){
-                    Parking p=parkMarkers.get(marker);
-                    String address=p.getAddress();
-                    String dimensions= p.getHeight()+"X"+p.getLength()+"X"+p.getWidth();
-                    String home=(p.isHome())?"Casa":"Conjunto";
-                    String covered=(p.isCovert())?"Si":"No";
-                    String available=(p.isAvailable())?"Si":"No";
-                    String costMinute=p.getCostMinute().toString();
-                    String stratum=p.getStratum().toString();
+                    selectedParking=parkMarkers.get(marker);
+                    String address=selectedParking.getAddress();
+                    String dimensions= selectedParking.getHeight()+"X"+selectedParking.getLength()+"X"+selectedParking.getWidth();
+                    String home=(selectedParking.isHome())?"Casa":"Conjunto";
+                    String covered=(selectedParking.isCovert())?"Si":"No";
+                    String available=(selectedParking.isAvailable())?"Si":"No";
+                    String costMinute=selectedParking.getCostMinute().toString();
+                    String stratum=selectedParking.getStratum().toString();
                     String data="Dirección: "+address+"\n"+
                             "Dimensiones en Metros (AltoXLargoXAncho): "+dimensions+"\n"+
                             "Tipo de Propiedad: "+home+" Estrato Residencia: "+stratum+"\n"+
                             "Estacionamiento Cubierto: "+covered+"\n"+
-                            "Disponible: "+available+" Valor/Minuto(Pesos): "+costMinute+"\n";
+                            "Disponible: "+available+" Valor/Minuto(Pesos): "+costMinute+"\n"+
+                            "Costo por Minuto: $"+costMinute;
                     description.setText(data);
+                    request.setEnabled(true);
                 }
                 return false;
             }
@@ -274,8 +289,7 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
         }
     }
 
-    public void onClickButton() {
-        zoom(myLocation, 15);
+    public void loadMap() {
         setParkingMarkers();
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -309,5 +323,13 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
             intent.putExtra(FetchAddressIntentService.LOCATION_DATA_EXTRA, lastLocation);
             startService(intent);
         }
+    }
+
+    public void registerRequest(){
+        Intent intent=new Intent(this, ParkingRequestActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Parking", selectedParking);
+        intent.putExtra("Parking", bundle);
+        startActivity(intent);
     }
 }
