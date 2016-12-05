@@ -37,15 +37,20 @@
 
         </activity>
         <activity android:name=".PaymentActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".RegisterActivity"
             android:label="@string/register_activity">
 
+        </activity>
+        <activity
+            android:name=".RegisterParkingActivity"
+            android:label="register_parking">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
