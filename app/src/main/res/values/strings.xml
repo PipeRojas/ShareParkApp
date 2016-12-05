@@ -16,4 +16,19 @@
     <string name="textview9_text">Está Disponible: </string>
     <string name="textview10_text">Costo por Minuto en Pesos: </string>
     <string name="textview11_text">Estrato: </string>
+    <string name="registra_tus_datos">Registra tus Datos:</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="direccion">Direccion</string>
+    <string name="telefono">Telefono</string>
+    <string name="cedula">Cedula</string>
+    <string name="nombre">Nombre</string>
+    <string name="registrar">Registrar</string>
+    <string name="agregar_metodo_de_pago_ahora">Agregar Metodo de Pago Ahora</string>
+    <string name="register_activity">register_user</string>
+    <string name="registra_tu_estacionamiento">Registra tu Estacionamiento</string>
+    <string name="registra_tu_vehiculo">Registra tu Vehiculo</string>
+    <string name="volver">Volver</string>
+    <string name="servicios_en_curso">Servicios en Curso</string>
+    <string name="find_me">¿Donde Estoy?</string>
 </resources>

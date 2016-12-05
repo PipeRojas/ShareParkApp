@@ -32,13 +32,22 @@
         <activity
             android:name=".FindParkingActivity"
             android:label="@string/title_activity_find_parking">
+
+        </activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".ServiceTimerActivity"></activity>
+        <activity android:name=".RegisterParkingActivity"></activity>
+        <activity android:name=".ParkingRequestActivity"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ParkingRequestActivity"></activity>
     </application>
 
 </manifest>

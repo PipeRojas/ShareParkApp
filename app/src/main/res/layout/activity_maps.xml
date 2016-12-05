@@ -10,10 +10,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="eci.cosw.edu.sharepark.SecondActivity"
-    android:background="@android:color/holo_blue_bright">
+    android:background="@drawable/background_degrade">
 
     <Button
-        android:text="@string/find_address"
+        android:text="@string/find_me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -53,6 +53,15 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/button3"
         android:text="@string/parking_request" />
+
+    <Button
+        android:text="Menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
 
 

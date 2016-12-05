@@ -91,7 +91,7 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
         fAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                loadMap();
             }
         });
         Button addRequestButton=(Button) findViewById(R.id.button3);
@@ -101,7 +101,14 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
                 registerRequest();
             }
         });
-        loadMap();
+
+        Button menu=(Button) findViewById(R.id.button4);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                menu();
+            }
+        });
     }
 
     public synchronized void buildGoogleApiClient() {
@@ -290,6 +297,7 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
     }
 
     public void loadMap() {
+        zoom(myLocation, 15);
         setParkingMarkers();
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -330,6 +338,12 @@ public class FindParkingActivity extends FragmentActivity implements OnMapReadyC
         Bundle bundle = new Bundle();
         bundle.putSerializable("Parking", selectedParking);
         intent.putExtra("Parking", bundle);
+        startActivity(intent);
+    }
+
+    public void menu(){
+        Intent intent=new Intent(this, HomeActivity.class);
+        Bundle bundle = new Bundle();
         startActivity(intent);
     }
 }
