@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_degrade"
+    android:weightSum="1"
+    tools:context="eci.cosw.edu.sharepark.HomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/parking_icon"
+        android:id="@+id/imageView4"
+        android:layout_weight="0.36" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"></LinearLayout>
+
+    <Button
+        android:text="@string/registra_tu_estacionamiento"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/rParking"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@color/darkBlue"
+        android:layout_weight="0.15" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"></LinearLayout>
+
+    <Button
+        android:text="@string/registra_tu_vehiculo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:id="@+id/rVehicle"
+        android:background="@color/darkBlue"
+        android:layout_weight="0.15" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.35">
+
+        <Button
+            android:text="@string/servicios_en_curso"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/servicioCurso"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@color/darkBlue"
+            android:layout_weight="0.05"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="0.03"></LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:text="@string/volver"
+        android:id="@+id/volverHome"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:textSize="15dp"
+        android:textColor="@color/darkBlue"
+        android:background="@color/white" />
+</LinearLayout>
