@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity{
         Bundle bundle = new Bundle();
         startActivity(intent);
     }public void goAheadP(){
-        Intent intent=new Intent(this, FindParkingActivity.class);
+        Intent intent=new Intent(this, RegisterParkingActivity.class);
         Bundle bundle = new Bundle();
         startActivity(intent);
     }public void goAheadS(){
