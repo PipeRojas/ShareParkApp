@@ -19,16 +19,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:id="@+id/textView3" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/parking_icon"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/textClock"
-        android:layout_alignEnd="@+id/textClock"
-        android:id="@+id/imageView2" />
+        android:id="@+id/textView3"
+        android:textColor="#0b34d7"
+        android:textSize="35sp"
+        android:gravity="center"/>
 
     <Button
         android:text="Calificar Servicio"
@@ -37,7 +31,8 @@
         android:id="@+id/button3"
         android:layout_below="@+id/textClock"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="58dp" />
+        android:layout_marginTop="58dp"
+        android:onClick="sendMessage"/>
 
     <TextClock
         android:layout_width="wrap_content"
@@ -45,5 +40,15 @@
         android:layout_marginTop="61dp"
         android:id="@+id/textClock"
         android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:textColor="#0b34d7"
+        android:textSize="35sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/parking_icon"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

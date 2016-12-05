@@ -1,5 +1,6 @@
 package eci.cosw.edu.sharepark;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RatingBar;
@@ -14,6 +15,8 @@ public class PaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        Intent intent = getIntent();
 
         message = (TextView)findViewById(R.id.textView4);
         message.setText("Tu servicio finalizó. Por favor califícalo:");

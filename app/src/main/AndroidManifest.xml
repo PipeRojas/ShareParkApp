@@ -31,17 +31,20 @@
 
         <activity
             android:name=".FindParkingActivity"
-            android:label="@string/title_activity_find_parking">
-        </activity>
+            android:label="@string/title_activity_find_parking" />
         <activity android:name=".ServiceTimerActivity">
 
         </activity>
-        <activity android:name=".PaymentActivity">
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

@@ -19,8 +19,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:id="@+id/textView4" />
+        android:layout_marginTop="70dp"
+        android:id="@+id/textView4"
+        android:textColor="#0b34d7"
+        android:textSize="35sp"
+        android:gravity="center"/>
 
     <Button
         android:text="Finalizar"
@@ -30,20 +33,19 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/button3" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
-        android:id="@+id/ratingBar" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/parking_icon"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_above="@+id/button3"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
