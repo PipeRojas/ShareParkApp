@@ -8,6 +8,7 @@
     tools:context="eci.cosw.edu.sharepark.RegisterActivity"
     android:weightSum="1">
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,25 +125,33 @@
         android:id="@+id/agregarPago"
         android:background="@color/darkorange"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_weight="0.13" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="31dp">
 
     </LinearLayout>
 
     <Button
         android:text="@string/registrar"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
+        android:layout_width="146dp"
+        android:layout_gravity="end"
         android:layout_height="wrap_content"
         android:id="@+id/registrarUsuario"
         android:background="@color/darkBlue"
         android:textColor="@color/white"
-        android:textSize="25dp"
-        android:layout_weight="0.27" />
+        android:textSize="25dp" />
+
+    <Button
+        android:text="@string/volver"
+        android:layout_width="244dp"
+        android:layout_height="30dp"
+        android:id="@+id/volver"
+        android:background="@color/white"
+        android:textColor="@color/darkBlue"
+        android:textSize="15dp"/>
 
 </LinearLayout>

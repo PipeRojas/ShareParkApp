@@ -13,4 +13,8 @@
     <string name="registrar">Registrar</string>
     <string name="agregar_metodo_de_pago_ahora">Agregar Metodo de Pago Ahora</string>
     <string name="register_activity">register_user</string>
+    <string name="registra_tu_estacionamiento">Registra tu Estacionamiento</string>
+    <string name="registra_tu_vehiculo">Registra tu Vehiculo</string>
+    <string name="volver">Volver</string>
+    <string name="servicios_en_curso">Servicios en Curso</string>
 </resources>

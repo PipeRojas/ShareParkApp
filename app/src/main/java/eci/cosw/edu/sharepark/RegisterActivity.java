@@ -1,5 +1,6 @@
 package eci.cosw.edu.sharepark;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
@@ -48,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity{
     EditText email;
     EditText password;
     Button registerUser;
+    Button volver;
 
     String var=null;
 
@@ -85,10 +87,18 @@ public class RegisterActivity extends AppCompatActivity{
                 }else if(!name.getText().toString().contains(" ")||n.length>2){
                     name.setError("Debes escribir un nombre y un apellido!");
                 }else {
-
                     postUser();
+                    goAhead();
                 }
             }
+        });
+        volver=(Button) findViewById(R.id.volver);
+        volver.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    back();
+                }
+
         });
     }
     private void postUser() {
@@ -122,5 +132,15 @@ public class RegisterActivity extends AppCompatActivity{
                     }
                 });
         queue.add(request);
+    }
+    public void back(){
+        Intent intent=new Intent(this, FindParkingActivity.class);
+        Bundle bundle = new Bundle();
+        startActivity(intent);
+    }
+    public void goAhead(){
+        Intent intent=new Intent(this, FindParkingActivity.class);
+        Bundle bundle = new Bundle();
+        startActivity(intent);
     }
 }
