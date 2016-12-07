@@ -1,67 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_degrade">
 
 <LinearLayout
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:weightSum="1"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        app:srcCompat="@mipmap/parking_icon"
+        android:id="@+id/imageView3" />
 
     <TextView
-        android:text="Registra tu vehiculo!"
+        android:text="@string/registra_tu_vehiculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView12"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Placa"
+        android:hint="@string/placa"
         android:ems="10"
-        android:id="@+id/placa" />
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp"
+        android:id="@+id/placa"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Marca"
+        android:hint="@string/marca"
         android:ems="10"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp"
         android:id="@+id/marca" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Modelo"
+        android:hint="@string/modelo"
+        android:inputType="number"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp"
         android:ems="10"
         android:id="@+id/modelo" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Color"
+        android:hint="@string/color"
         android:ems="10"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp"
         android:id="@+id/color" />
 
-    <EditText
+    <TextView
+        android:text="@string/tipo_de_veh_culo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Tipo de vehiculo"
-        android:ems="10"
-        android:id="@+id/tvehiculo" />
+        android:id="@+id/tipoV"
+        android:layout_gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="20dp"/>
 
-    <Button
-        android:text="Guardar"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/guar"/>
+        android:layout_height="140dp"
+        android:weightSum="1">
+
+        <Button
+            android:text="@string/guardar"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:id="@+id/guar"
+            android:layout_gravity="end"
+            android:background="@color/darkBlue"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <Button
+            android:text="@string/volver"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:id="@+id/back"
+            android:layout_gravity="end"
+            android:background="@color/white"
+            android:textColor="@color/darkBlue"
+            android:textSize="20dp"/>
+    </LinearLayout>
+
 </LinearLayout>
 </ScrollView>

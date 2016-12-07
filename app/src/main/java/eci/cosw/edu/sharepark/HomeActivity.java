@@ -35,6 +35,12 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
         registerVehicle=(Button) findViewById(R.id.rVehicle);
+        registerVehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goAheadV();
+            }
+        });
 
         registerParking=(Button) findViewById(R.id.rParking);
         registerParking.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +76,10 @@ public class HomeActivity extends AppCompatActivity{
         startActivity(intent);
     }public void goAheadS(){
         Intent intent=new Intent(this, ServiceTimerActivity.class);
+        Bundle bundle = new Bundle();
+        startActivity(intent);
+    }public void goAheadV() {
+        Intent intent = new Intent(this, RegisterVehicleActivity.class);
         Bundle bundle = new Bundle();
         startActivity(intent);
     }

@@ -31,4 +31,10 @@
     <string name="volver">Volver</string>
     <string name="servicios_en_curso">Servicios en Curso</string>
     <string name="find_me">¿Donde Estoy?</string>
+    <string name="tipo_de_veh_culo">Tipo de Vehículo</string>
+    <string name="guardar">Guardar</string>
+    <string name="color">Color</string>
+    <string name="modelo">Modelo</string>
+    <string name="marca">Marca</string>
+    <string name="placa">Placa</string>
 </resources>

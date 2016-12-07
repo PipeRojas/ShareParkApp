@@ -32,7 +32,6 @@
         <activity
             android:name=".FindParkingActivity"
             android:label="@string/title_activity_find_parking">
-
         </activity>
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".PaymentActivity"></activity>
@@ -41,6 +40,7 @@
         <activity android:name=".ServiceTimerActivity"></activity>
         <activity android:name=".RegisterParkingActivity"></activity>
         <activity android:name=".ParkingRequestActivity"></activity>
+        <activity android:name=".RegisterVehicleActivity"></activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

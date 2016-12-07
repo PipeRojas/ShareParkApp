@@ -28,8 +28,8 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:textSize="20dp"
-        android:textColor="#FFFF"
-        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:background="@color/darkBlue"
         android:layout_weight="0.15" />
 
     <LinearLayout
@@ -45,8 +45,8 @@
         android:layout_gravity="center"
         android:textSize="20dp"
         android:id="@+id/rVehicle"
-        android:textColor="#FFFF"
-        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        android:background="@color/darkBlue"
         android:layout_weight="0.15" />
 
     <LinearLayout
@@ -71,8 +71,8 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:textSize="20dp"
-            android:textColor="#FFFF"
-            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:background="@color/darkBlue"
             android:layout_weight="0.05"/>
 
         <LinearLayout
@@ -90,6 +90,6 @@
         android:gravity="center"
         android:layout_gravity="end"
         android:textSize="15dp"
-        android:textColor="#FFFF"
-        android:background="@color/colorPrimaryDark" />
+        android:textColor="@color/darkBlue"
+        android:background="@color/white" />
 </LinearLayout>
