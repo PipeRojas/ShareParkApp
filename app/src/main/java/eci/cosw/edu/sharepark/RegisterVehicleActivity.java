@@ -71,9 +71,9 @@ public class RegisterVehicleActivity extends AppCompatActivity {
                     placa.setError("No olvides tu placa!");
                 }else if(placa.getText().toString().length()!=6){
                     placa.setError("Tu placa no es correcta!");
-                }else if(marca.getText().length()==0){
+                }else if(marca.getText().toString().length()==0){
                     marca.setError("No olvides la marca de tu vehículo!");
-                }else if(color.getText().length()==0){
+                }else if(color.getText().toString().length()==0){
                     color.setError("No olvides el color de tu vehículo!");
                 }else if (type==false){
                     marca.setError("No olvides el tipo de tu vehículo!");

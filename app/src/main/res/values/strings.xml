@@ -37,4 +37,6 @@
     <string name="modelo">Modelo</string>
     <string name="marca">Marca</string>
     <string name="placa">Placa</string>
+    <string name="inicia_sesion">Inicia Sesion</string>
+    <string name="eres_nuevo_crea_tu_cuenta">¿Eres nuevo? Crea tu Cuenta!</string>
 </resources>

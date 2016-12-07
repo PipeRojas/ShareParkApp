@@ -11,12 +11,19 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -58,24 +65,45 @@ public class ParkingRequestActivity extends AppCompatActivity {
                 back();
             }
         });
-    }
-
-    public void getOwner(){
-        RequestQueue queue= Volley.newRequestQueue(this);
-        String url="http://sharepark.herokuapp.com/usuarios/"+selectedParking.getOwner_id();
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        Button request=(Button) findViewById(R.id.button6);
+        request.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(String response) {
-                System.out.println(response);
-                owner=new Gson().fromJson(response, User.class);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.println("Error");
+            public void onClick(View view) {
+                createRequest();
             }
         });
-        queue.add(stringRequest);
+    }
+
+    public void createRequest(){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        final String url = "https://shareparkservices.herokuapp.com/usuarios/"+LoginActivity.user.getId().toString()+"/solicitud";
+        Random rn=new Random();
+        Integer id= rn.nextInt();
+        HashMap<String, String> userParam = new HashMap<String, String>();
+        userParam.put("state", "false");
+        userParam.put("service_paid", "0");
+        userParam.put("id", id.toString());
+        userParam.put("giver_id", LoginActivity.user.getId().toString());
+        userParam.put("taker_id", selectedParking.getOwner_id().toString());
+
+        JsonObjectRequest request = new JsonObjectRequest(url, new JSONObject(userParam),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            VolleyLog.v("Response:%n %s", response.toString(4));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        VolleyLog.e("Error: ", error.getMessage());
+                    }
+                });
+        queue.add(request);
     }
 
     public void back(){
