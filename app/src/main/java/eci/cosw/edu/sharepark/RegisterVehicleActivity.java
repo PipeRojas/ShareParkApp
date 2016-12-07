@@ -108,14 +108,12 @@ public class RegisterVehicleActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         final String url = "https://shareparkservices.herokuapp.com/vehiculos";
         HashMap<String, String> vehicleParam = new HashMap<String, String>();
-        vehicleParam.put("plate", placa.toString());
-        vehicleParam.put("brand", marca.toString());
-        vehicleParam.put("model", modelo.toString());
-        vehicleParam.put("color", color.toString());
-        vehicleParam.put("vehicleType", tvehiculo);
+        vehicleParam.put("plate", placa.getText().toString());
+        vehicleParam.put("brand", marca.getText().toString());
+        vehicleParam.put("model", modelo.getText().toString());
+        vehicleParam.put("color", color.getText().toString());
+        vehicleParam.put("vehicleType", tvehiculo.toString());
         vehicleParam.put("owner_id", "1014281682");
-        System.out.println(tvehiculo);
-
         JsonObjectRequest request = new JsonObjectRequest(url, new JSONObject(vehicleParam),
                 new Response.Listener<JSONObject>() {
                     @Override
