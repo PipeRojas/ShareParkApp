@@ -58,6 +58,7 @@ public class ParkingRequestActivity extends AppCompatActivity {
                 back();
             }
         });
+        System.out.println(LoginActivity.user.getId());
     }
 
     public void getOwner(){

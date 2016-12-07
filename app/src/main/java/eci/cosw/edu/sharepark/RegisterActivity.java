@@ -135,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity{
         queue.add(request);
     }
     public void back(){
-        Intent intent=new Intent(this, FindParkingActivity.class);
+        Intent intent=new Intent(this, LoginActivity.class);
         Bundle bundle = new Bundle();
         startActivity(intent);
     }
