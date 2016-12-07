@@ -42,7 +42,7 @@ public class RegisterParkingActivity extends AppCompatActivity {
         hood = (CheckBox)findViewById(R.id.checkBox2);
         house = (CheckBox)findViewById(R.id.checkBox);
         roof = (CheckBox)findViewById(R.id.checkBox3);
-        unroof = (CheckBox)findViewById(R.id.checkBox2);
+        unroof = (CheckBox)findViewById(R.id.checkBox4);
         costo = (TextView) findViewById(R.id.costo);
         est = (TextView) findViewById(R.id.estrato);
         owner_id = (TextView) findViewById(R.id.owner_id);
@@ -58,7 +58,7 @@ public class RegisterParkingActivity extends AppCompatActivity {
     public void guardar() {
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        final String url = "https://shareparkservices.herokuapp.com/usuarios/";
+        final String url = "https://shareparkservices.herokuapp.com/parkings/";
         HashMap<String, String> parksParam = new HashMap<String, String>();
         parksParam.put("owner_id",owner_id.toString() );
         parksParam.put("covert",roof.toString() );
