@@ -39,4 +39,6 @@
     <string name="placa">Placa</string>
     <string name="inicia_sesion">Inicia Sesion</string>
     <string name="eres_nuevo_crea_tu_cuenta">¿Eres nuevo? Crea tu Cuenta!</string>
+    <string name="sharpark">SharPark</string>
+    <string name="sharepark">SharePark</string>
 </resources>

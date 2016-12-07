@@ -41,7 +41,8 @@
         <activity android:name=".RegisterParkingActivity"></activity>
         <activity android:name=".ParkingRequestActivity"></activity>
         <activity android:name=".RegisterVehicleActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

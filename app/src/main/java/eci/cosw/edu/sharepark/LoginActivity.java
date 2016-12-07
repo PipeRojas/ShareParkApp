@@ -28,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
     private Button register;
+    private User ans=new User();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                     password.setError("No olvides tu contraseña!");
                 }else{
                     getUser();
+                    user=ans;
                     if(user==null){
                         id.setError("Tu usuario no se encuentra registrado!");
                     }else{
@@ -62,13 +65,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-    public void getUser(){
+    public User getUser(){
         RequestQueue queue= Volley.newRequestQueue(this);
         String url="http://sharepark.herokuapp.com/usuarios/"+id.getText().toString();
         StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                user=new Gson().fromJson(response, User.class);
+                ans=new Gson().fromJson(response, User.class);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -77,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         queue.add(stringRequest);
+        return ans;
     }
     public void mapa(){
         Intent intent=new Intent(this, FindParkingActivity.class);
