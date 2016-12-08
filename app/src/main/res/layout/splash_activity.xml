@@ -6,7 +6,8 @@
     android:background="@drawable/background_degrade"
     android:weightSum="1"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SplashActivity">
+    tools:context=".SplashActivity"
+    android:id="@+id/splashLayout">
 
     <LinearLayout
         android:orientation="vertical"

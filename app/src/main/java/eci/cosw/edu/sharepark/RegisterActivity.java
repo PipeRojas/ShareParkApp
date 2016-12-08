@@ -19,6 +19,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +38,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import eci.cosw.edu.sharepark.entities.Request;
+import eci.cosw.edu.sharepark.entities.User;
 
 /**
  * Created by alejandra on 4/12/16.
@@ -89,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity{
                     name.setError("Debes escribir un nombre y un apellido!");
                 }else {
                     postUser();
+                    getUser();
                     goAhead();
                 }
             }
@@ -143,5 +146,21 @@ public class RegisterActivity extends AppCompatActivity{
         Intent intent=new Intent(this, FindParkingActivity.class);
         Bundle bundle = new Bundle();
         startActivity(intent);
+    }
+    public void getUser(){
+        RequestQueue queue= Volley.newRequestQueue(this);
+        String url="http://sharepark.herokuapp.com/usuarios/"+id.getText().toString();
+        StringRequest stringRequest=new StringRequest(com.android.volley.Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                LoginActivity.user=new Gson().fromJson(response, User.class);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("Error");
+            }
+        });
+        queue.add(stringRequest);
     }
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_degrade">
+    android:background="@drawable/background_degrade"
+    tools:context=".RegisterParkingActivity">
 
 <LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
@@ -12,102 +13,133 @@
     android:weightSum="1">
 
     <TextView
-        android:text="Registra tu parqueadero!"
+        android:text="@string/registra_tu_estacionamiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-    <TextView
-        android:text="Como quieres identificar tu parqueadero(numero)"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp" />
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"/>
 
     <EditText
+        android:hint="@string/direcci_n"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
-        android:ems="10"
-        android:id="@+id/owner_id" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="¿Cuál es tu dirección?"
-        android:ems="10"
-        android:id="@+id/adress" />
-
-    <CheckBox
-        android:text="Conjunto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox2"
-        tools:text="Conjunto" />
-
-    <CheckBox
-        android:text="Casa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox" />
-
-    <CheckBox
-        android:text="Cubierto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox3" />
-
-    <CheckBox
-        android:text="Descubierto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox4" />
-
-
-
-
-    <TextView
-        android:text="¿Cuanto cobrarias por minuto en tu parqueadero?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_weight="0.10"
-        android:textSize="18sp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberSigned"
-        android:ems="10"
-        android:id="@+id/costo" />
-
-    <TextView
-        android:text="¿Que estrato es tu parqueadero?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textSize="18sp" />
+        android:id="@+id/addressParkRegister"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/estrato" />
+        android:id="@+id/stratum"
+        android:hint="@string/estrato"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp"/>
 
-    <Button
-        android:text="Guardar"
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/cost"
+        android:hint="@string/costo_por_minuto_cop"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp"  />
+
+    <TextView
+        android:text="@string/tu_parqueadero_es_cubierto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/parkCovert"
+        android:layout_gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerCovert"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/cu_l_es_el_tipo_de_tu_propiedad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/propType"
+        android:layout_gravity="center"
+        android:textColor="@color/grey"
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerHome"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/las_dimensiones_de_tu_estacionamiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dimentions"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/heightParkRegister"
+        android:hint="@string/alto_metros"
+        android:inputType="number"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/widthParkRegister"
+        android:hint="@string/ancho_metros"
+        android:inputType="number"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/lengthParkRegister"
+        android:hint="@string/largo_metros"
+        android:inputType="number"
+        android:textColorHint="@color/grey"
+        android:textSize="20dp" />
+
+
+    <Button
+        android:text="@string/guardar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:id="@+id/save"
-        android:onClick="guardar"
+        android:layout_gravity="center"
         android:textColor="@color/white"
         android:background="@color/darkBlue"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp"/>
+
+    <Button
+        android:text="@string/volver"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:id="@+id/backRp"
+        android:layout_gravity="bottom"
+        android:textColor="@color/darkBlue"
+        android:background="@color/white"
+        android:textSize="18dp"/>
 
 </LinearLayout>
 </ScrollView>

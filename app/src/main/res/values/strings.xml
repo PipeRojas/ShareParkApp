@@ -41,4 +41,23 @@
     <string name="eres_nuevo_crea_tu_cuenta">¿Eres nuevo? Crea tu Cuenta!</string>
     <string name="sharpark">SharPark</string>
     <string name="sharepark">SharePark</string>
+    <string name="direcci_n">Dirección</string>
+    <string name="cu_l_es_el_tipo_de_tu_propiedad">¿Cuál es el tipo de tu propiedad?</string>
+    <string name="tu_parqueadero_es_cubierto">¿Tu parqueadero es cubierto?</string>
+    <string name="las_dimensiones_de_tu_estacionamiento">Las dimensiones de tu Estacionamiento</string>
+    <string name="alto_metros">Alto (Metros)</string>
+    <string name="ancho_metros">Ancho (Metros)</string>
+    <string name="largo_metros">Largo (Metros)</string>
+    <string name="costo_por_minuto_cop">Costo por minuto (COP$)</string>
+    <string name="estrato">Estrato</string>
+    <string name="no_olvides">No olvides</string>
+    <string name="estacionamiento">de tu estacionamiento!</string>
+    <string name="la_direccion">la dirección</string>
+    <string name="cos_minute">el costo por minuto</string>
+    <string name="the_stratum">el estrato</string>
+    <string name="the_he">el alto</string>
+    <string name="the_wi">el ancho</string>
+    <string name="the_le">el largo</string>
+    <string name="stratum_error">Tu estrato es incorrecto!</string>
+    <string name="detail_park">No haz escogido algún detalle sobre tu estacionamiento!</string>
 </resources>
