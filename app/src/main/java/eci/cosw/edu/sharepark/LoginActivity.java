@@ -47,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                     getUser();
                     if(user==null){
                         id.setError("Tu usuario no se encuentra registrado!");
+                    }else if(user!=null && user.getPassword().equals(password.getText().toString())){
+                        password.setError("Tu contraseña es incorrecta!");
                     }else{
                         mapa();
                     }
@@ -65,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void getUser(){
         RequestQueue queue= Volley.newRequestQueue(this);
-        String url="http://sharepark.herokuapp.com/usuarios/"+id.getText().toString();
+        String url="https://shareparkservices.herokuapp.com/usuarios/"+id.getText().toString()+"/";
         StringRequest stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
