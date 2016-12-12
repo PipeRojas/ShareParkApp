@@ -70,6 +70,7 @@ public class ParkingRequestActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 createRequest();
+                back();
             }
         });
     }

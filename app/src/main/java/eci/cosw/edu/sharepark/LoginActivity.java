@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                     getUser();
                     if(user==null){
                         id.setError("Tu usuario no se encuentra registrado!");
-                    }else if(user!=null && user.getPassword().equals(password.getText().toString())){
+                    }else if(user!=null && !user.getPassword().equals(password.getText().toString())){
                         password.setError("Tu contraseña es incorrecta!");
                     }else{
                         mapa();
